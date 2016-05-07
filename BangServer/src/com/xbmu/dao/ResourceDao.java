@@ -30,6 +30,12 @@ public interface ResourceDao
 	 */
 	void save(Resource resource);
 	/**
+	 * 删除资源
+	 * @param userId 拥有者ID
+	 * @param resId 资源ID
+	 */
+	void del(Integer userId, Integer resId);
+	/**
 	 * 获取物品
 	 * @param itemId 物品id
 	 * @return 返回物品对象

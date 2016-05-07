@@ -149,4 +149,13 @@ public class PostDaoImpl implements PostDao
 			throw new RuntimeException(e);
 		}
 	}
+	
+	public void del(Integer userId, Integer postId) {
+		try {
+			String sql = "delete from post where post_id=? and owner_id=?";
+			qr.update(sql, postId, userId);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}	
+	}
 }

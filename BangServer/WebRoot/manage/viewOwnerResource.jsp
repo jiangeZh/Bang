@@ -11,6 +11,7 @@
 		<th>资源url</th>
 		<th>资源大小</th>
 		<th>上传时间</th>	
+		<th>管理</th>	
 	</tr>
 	<c:forEach items="${resources}" var="i" varStatus="vs">
 		<tr height="24" class="${vs.index%2==0?'odd':'even' }">
@@ -19,6 +20,7 @@
 			<td nowrap="nowrap">${i.url}</td>
 			<td nowrap="nowrap">${i.size}</td>
 			<td nowrap="nowrap">${i.uploadDate}</td>
+			<td nowrap="nowrap"><a href="${pageContext.request.contextPath}/servlet/DelResourceServlet?resId=${i.id}">删除</a></td>
 		</tr>
 	</c:forEach>
 </table>

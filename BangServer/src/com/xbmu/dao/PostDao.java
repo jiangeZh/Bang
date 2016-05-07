@@ -37,6 +37,13 @@ public interface PostDao
 	void incrPostThx(int postId);
 	
 	void save(Post post);
+	
+	/**
+	 * 删除文章
+	 * @param userId 拥有者ID
+	 * @param postId 文章ID
+	 */
+	void del(Integer userId, Integer postId);
 	/**
 	 * 获取文章
 	 * @param itemId 文章id

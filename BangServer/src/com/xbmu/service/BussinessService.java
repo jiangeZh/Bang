@@ -96,6 +96,14 @@ public interface BussinessService{
 		throws BangException;
 	
 	/**
+	 * 删除资源
+	 * @param userId 拥有者ID
+	 * @param resId 资源ID
+	 */
+	void delResourceByUserIdAndResId(Integer userId, Integer resId)
+		throws BangException;
+	
+	/**
 	 * 查询全部文章
 	 * @return 全部文章
 	 */
@@ -133,6 +141,13 @@ public interface BussinessService{
 	int addPost(Post post, Integer kindId, Integer userId)
 		throws BangException;
 	
+	/**
+	 * 删除文章
+	 * @param userId 拥有者ID
+	 * @param postId 文章ID
+	 */
+	void delPostByUserIdAndResId(Integer userId, Integer postId)
+		throws BangException;
 	
 	/**
 	 * 增加文章的感谢数

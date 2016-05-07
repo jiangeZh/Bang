@@ -30,6 +30,7 @@ public class LoginServlet extends HttpServlet {
 		String mode = request.getParameter("mode");
 		if("android".equals(mode)){
 			Integer userId = validateLogin(request);
+			//userId>0表示登录成功
 			try {
 				JSONObject jsonObject = new JSONObject();
 				//把验证的userId封装成JSONObject

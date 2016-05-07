@@ -159,6 +159,12 @@ public class BussinessServiceImpl implements BussinessService {
 		resourceDao.save(resource);
 		return resource.getRes_id();
 	}
+	
+	//删除资源
+	public void delResourceByUserIdAndResId(Integer userId, Integer resId)
+		throws BangException {
+		resourceDao.del(userId, resId);
+	}
 	//---------------根据资源种类选资源--------------
 	public List<ResourceBean> getResourcesByKind(int kindId) throws BangException {
 		List<ResourceBean> result = new ArrayList<ResourceBean>();
@@ -314,9 +320,15 @@ public class BussinessServiceImpl implements BussinessService {
 		post.setPost_date(new Date());
 		post.setKind_id(kindId);
 		post.setOwner_id(userId);
-		//保存resource对象
+		//保存post对象
 		postDao.save(post);
 		return post.getPost_id();
+	}
+	
+	//删除文章
+	public void delPostByUserIdAndResId(Integer userId, Integer resId)
+		throws BangException {
+		postDao.del(userId, resId);
 	}
 	/**
 	 * 根据分类查找文章

@@ -133,4 +133,13 @@ public class ResourceDaoImpl implements ResourceDao
 			throw new RuntimeException(e);
 		}
 	}
+	
+	public void del(Integer userId, Integer resId) {
+		try {
+			String sql = "delete from resource where res_id=? and owner_id=?";
+			qr.update(sql, resId, userId);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}	
+	}
 }

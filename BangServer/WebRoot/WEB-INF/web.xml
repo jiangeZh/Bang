@@ -76,6 +76,14 @@
     <servlet-name>ViewUserServlet</servlet-name>
     <servlet-class>com.xbmu.web.controller.ViewUserServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>DelResourceServlet</servlet-name>
+    <servlet-class>com.xbmu.web.controller.DelResourceServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DelPostServlet</servlet-name>
+    <servlet-class>com.xbmu.web.controller.DelPostServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/servlet/LoginServlet</url-pattern>
@@ -143,6 +151,14 @@
   <servlet-mapping>
     <servlet-name>ViewUserServlet</servlet-name>
     <url-pattern>/servlet/ViewUserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelResourceServlet</servlet-name>
+    <url-pattern>/servlet/DelResourceServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelPostServlet</servlet-name>
+    <url-pattern>/servlet/DelPostServlet</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
