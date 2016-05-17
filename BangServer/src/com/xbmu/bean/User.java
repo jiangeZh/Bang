@@ -46,6 +46,17 @@ public class User implements Serializable{
 		this.role = role;
 		this.concern_kind_id = concern_kind_id;
 	}
+	public User(String username, String userpass, String email, Integer school_year, 
+			String user_desc, Integer role, Integer concern_kind_id) {
+		super();
+		this.username = username;
+		this.userpass = userpass;
+		this.email = email;
+		this.school_year = school_year;
+		this.user_desc = user_desc;
+		this.role = role;
+		this.concern_kind_id = concern_kind_id;
+	}
 	@Override
 	public String toString() {
 		return "User [user_id=" + user_id + ", username=" + username

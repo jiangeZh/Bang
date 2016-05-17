@@ -18,6 +18,8 @@ public interface ResourceDao
 	 */
 	List<Resource> findResourceByKind(Integer kindId);
 
+	List<Resource> findResourceByKey(String key);
+	
 	/**
 	 * ��������߲�����Դ
 	 * @param useId ������Id;

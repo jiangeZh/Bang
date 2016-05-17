@@ -1,6 +1,10 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ include file="/manage/header.jsp"%>
 <br/>
+<form action="${pageContext.request.contextPath}/servlet/SearchResourceServlet?mode=web" method="post">
+	<input type="text" name="key" placeholder="Search Here…">
+	<button type="submit">搜索</button>
+</form>
 <table width="80%" align="center" cellpadding="0" cellspacing="1" >
 	<tr>
 		<td colspan="4" >所有资源</td> 

@@ -112,6 +112,34 @@ public class ResourceDaoImpl implements ResourceDao
 			throw new RuntimeException(e);
 		}	
 	}
+	
+	public List<Resource> findResourceByKey(String key)
+	{
+		try {
+			String sql = "";
+			if (isNumberic(key)) {
+				int res_id = Integer.parseInt(key);
+				sql = "select * from resource where res_name like '%"+key+"%' or res_id = "+res_id;
+			}
+			else {
+				sql = "select * from resource where res_name like '%"+key+"%'";
+			}
+			List<Resource> resources = qr.query(sql, new BeanListHandler<Resource>(
+					Resource.class));
+			return resources;
+		} catch (Exception e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
+	public static boolean isNumberic(String str){ 
+		for (int i = str.length()-1; i>=0; --i) { 
+			if(!Character.isDigit(str.charAt(i))){ 
+				return false; 
+			} 
+		} 
+		return true; 
+	} 
 
 	public Resource get(int resourceId) {
 		try {

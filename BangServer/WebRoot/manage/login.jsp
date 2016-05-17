@@ -14,6 +14,7 @@
 			用户密码:<input type="password" name="password" /><br/> 
 			<input type="submit" value="登录" />
 		</form>
+		<a href="${pageContext.request.contextPath}/manage/register.jsp">注册</a>
 	</div>
 </body>
 </html>

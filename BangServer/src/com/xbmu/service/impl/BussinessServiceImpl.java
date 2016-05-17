@@ -51,6 +51,14 @@ public class BussinessServiceImpl implements BussinessService {
 		return -1;
 	}
 
+	public int register(User user) throws BangException {
+		int userId = userDao.findUserIdByName(user.getUsername());
+		if (userId < 0) { //用户名不存在，可以注册
+			return userDao.addUser(user);
+		}
+		return -1;
+	}	
+	
 	public String getOwner(int ownerId) throws BangException {
 		try {
 			User user = userDao.get(ownerId);
@@ -117,6 +125,21 @@ public class BussinessServiceImpl implements BussinessService {
 	public List<ResourceBean> getResources() throws BangException {
 		try {
 			List<Resource> resources = resourceDao.findAllResource();
+			List<ResourceBean> result = new ArrayList<ResourceBean>();
+			for (Iterator<Resource> it = resources.iterator(); it.hasNext();) {
+				ResourceBean ib = new ResourceBean();
+				initResource(ib, it.next());
+				result.add(ib);
+			}
+			return result;
+		} catch (Exception e) {
+			throw new BangException("查询资源出现异常,请重试");
+		}
+	}
+	
+	public List<ResourceBean> getResourcesByKey(String key) throws BangException {
+		try {
+			List<Resource> resources = resourceDao.findResourceByKey(key);
 			List<ResourceBean> result = new ArrayList<ResourceBean>();
 			for (Iterator<Resource> it = resources.iterator(); it.hasNext();) {
 				ResourceBean ib = new ResourceBean();

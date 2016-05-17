@@ -7,6 +7,7 @@ import com.xbmu.bean.Kind;
 import com.xbmu.bean.Post;
 import com.xbmu.bean.FavoritesRes;
 import com.xbmu.bean.FavoritesPost;
+import com.xbmu.bean.User;
 import com.xbmu.business.UserBean;
 import com.xbmu.business.ResourceBean;
 import com.xbmu.business.KindBean;
@@ -27,6 +28,9 @@ public interface BussinessService{
 	 */
 	int validLogin(String username , String pass)
 		throws BangException;
+
+	int register(User user)
+			throws BangException;
 	
 	Integer getUserId(String username) throws BangException;
 	
@@ -77,6 +81,8 @@ public interface BussinessService{
 	 * @return 该类的全部资源
 	 */
 	List<ResourceBean> getResourcesByKind(int kindId) throws BangException;
+	
+	List<ResourceBean> getResourcesByKey(String key) throws BangException;
 	
 	/**
 	 * 根据资源id，获取资源
